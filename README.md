@@ -31,6 +31,57 @@ Crypto trading interfaces present steep cognitive barriers for retail users whil
 
 ---
 
+## 🏗️ System Architecture & Financial Telemetry Flow
+
+Apex Crypto bridges non-custodial Web3 identity with **high-frequency market data pipelines**, ensuring millisecond execution while protecting users against frontrunning, MEV bots, and unexpected gas spikes.
+
+```mermaid
+flowchart TD
+    subgraph Web3Ingestion ["🌐 Non-Custodial Ingestion & Auth"]
+        WalletGateway["Multi-Chain Wallet Connect Gateway"]
+        Providers{"Wallet Bridges:\n• MetaMask (EVM)\n• Phantom (Solana)\n• WalletConnect (Mobile)"}
+        IdentityAudit["EIP-4361 Sign-In With Ethereum & KYC/AML"]
+    end
+
+    subgraph RealTimeTelemetryEngine ["⚡ High-Frequency Market Telemetry"]
+        WebSocketFeed["Market Telemetry Feed (wss:// WebSocket)"]
+        CandlestickEngine["Live Candlestick & Technical Indicators (EMA, RSI, MACD)"]
+        DepthBook["Real-Time Bid/Ask Order Book & Liquidation Heatmap"]
+    end
+
+    subgraph ExecutionCore ["💹 Order Execution & DeFi Aggregator"]
+        OrderConsole["Trade Execution Console (Limit, Market, Stop-Loss)"]
+        DEXAggregator["Smart Order Routing (Uniswap, Curve, Raydium)"]
+        GasEstimator["Dynamic EIP-1559 Gas Optimizer & Slippage Guard"]
+    end
+
+    subgraph SettlementLayer ["🔒 Biometric Signing & On-Chain Settlement"]
+        SigningModal["Hardware & Biometric Signature Verification"]
+        MempoolBroadcaster["Mempool Dispatch & Nonce Tracking"]
+        PortfolioSync["Multi-Asset PnL Ledger & Tax Reconciliation"]
+    end
+
+    WalletGateway --> Providers --> IdentityAudit
+    IdentityAudit --> OrderConsole
+    
+    WebSocketFeed --> CandlestickEngine & DepthBook
+    CandlestickEngine & DepthBook --> OrderConsole
+    
+    OrderConsole --> DEXAggregator --> GasEstimator
+    GasEstimator --> SigningModal --> MempoolBroadcaster --> PortfolioSync
+```
+
+### 🔬 Financial Architecture & Execution Safeguards
+
+1. **Multi-Protocol Non-Custodial Bridging**:
+   - The onboarding gateway harmonizes distinct cryptographic signatures (EVM ECDSA, Solana Ed25519) into a single unified UX layer, supporting hardware devices (Ledger, Trezor) alongside browser extensions.
+2. **Sub-100ms Telemetry Rendering**:
+   - Market data streams over persistent WebSocket channels directly into virtualized DOM lists and HTML5 canvas charts, maintaining 60fps rendering even during high-volatility market sell-offs.
+3. **MEV & Slippage Protection Engine**:
+   - The trade console dynamically calculates maximum tolerable price impact and routes swaps through decentralized liquidity aggregators, preventing front-running and sandwich attacks.
+
+---
+
 ## 🖼️ High-Fidelity Design Artifacts & Production Canvases
 
 ### 1. Multi-Chain Wallet Connect & Web3 Provider Gateway
