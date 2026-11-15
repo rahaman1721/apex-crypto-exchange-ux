@@ -133,7 +133,18 @@ High-density trading terminal with customizable modular widgets, live order book
 - **Target Audience**: Retail Web3 users, institutional crypto asset managers, day traders, and DeFi liquidity providers.
 
 ---
+---
+
+## 👨‍💻 Author
+
+**Obaidhur Rahaman**  
+Full Stack Developer & Lead UI/UX Designer  
+
+- 🌐 **Portfolio**: [https://rahaman1721.framer.website](https://rahaman1721.framer.website)  
+- 🐙 **GitHub**: [@rahaman1721](https://github.com/rahaman1721)  
+- 💼 **LinkedIn**: [linkedin.com/in/obaidhur-rahaman-1721z](https://www.linkedin.com/in/obaidhur-rahaman-1721z)  
+- 📧 **Email**: [rahaman171920@gmail.com](mailto:rahaman171920@gmail.com)  
 
 <div align="center">
-  <sub>Designed with precision by <a href="https://rahaman1721.framer.website">Obaidhur Rahaman</a> © 2026</sub>
+  <sub>Designed & Developed with precision by Obaidhur Rahaman © 2026</sub>
 </div>
